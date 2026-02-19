@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Villains</title>
+    </head>
+<body>
+
+<h1>Villains by Juvaan Sabaroche</h1>
+
+<h2>Guess the Villain</h2>
+
+<form>
+    <label for="villain">Funny Man </label>
+    <input type ="password" id="villain" value="Joker"> <br>
+
+    <label for="Villain Guess">Guess the Villain</label>
+    <input type ="text" id="guess"> <br>
+
+    <input type="button" onclick="checkVillain()" value="Check the Guess">
+</form>
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+var caught = 0
+var gotAway = 0
+function checkVillain(){
+    console.log("Checking villain guess")
+   let villain = document.getElementById("villain").value
+    let guess = document.getElementById("guess").value
+    if(villain == guess){
+        caught += 1
+        alert("You caught them!")
+    } else {
+        gotAway += 1
+        alert("Maybe next time!")
+    }
+    out = document.getElementById("result")
+    out.innerHTML = "Caught: " + caught + " | Got Away: " + gotAway;
+}
+</script>
+
+</body>
+</html> 
