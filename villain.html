@@ -40,5 +40,29 @@ function checkVillain(){
 }
 </script>
 
+<div class="container">
+    <img src="acacia-tree.jpg" alt="Acacia Tree" width="150" height="150" onclick="updatePic()">
+</div>
+
+<script>
+    var usePic = 1
+    function updatePic(){
+        switch(usePic){
+            case 1:
+                document.querySelector(".container img").src = "acacia-tree.jpg"
+                usePic = 2
+                break;
+            case 2:
+                document.querySelector(".container img").src = "AlderTree.jpg"
+                usePic = 3
+                break;
+            case 3:
+                document.querySelector(".container img").src = "BaobabTree.jpg"
+                usePic = 1
+                break;
+        }
+    }
+</script>
+
 </body>
 </html> 
