@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tax Computation</title>
+    </head>
+<body>
+
+<h2>Juvaan Sabaroche Tax Table Computation</h2>
+
+<form>
+    <label for="income">Enter income </label>
+    <input type ="number" id="income" name="income" value=5000> <br>
+
+    <label for="baseRate">Enter the base tax rate </label>
+    <input type ="number" id="baseRate" name="baseRate" value=0.05> <br>
+
+    <label for="cutoff">Enter the cut off </label>
+    <input type ="number" id="cutoff" name="cutoff" value=7500> <br>
+
+    <label for="extRate">Enter the extended tax rate </label>
+    <input type ="number" id="extRate" name="extRate" value=0.15> <br>
+
+    <input type="button" onclick="doTax()" value="Show Tax Table">
+</form>
+
+
+<p id="result"> Result </p>
+
+<script> 
+
+function doTax (){
+    console.log("Computing tax table")
+    var income = document.getElementById("income").value
+    var baseRate = document.getElementById("baseRate").value
+    var cutoff = document.getElementById("cutoff").value
+    var extRate = document.getElementById("extRate").value
+
+   var taxTable = ""
+
+   for (var i = 1; i <= 5; i++) {
+        var incomeLevel = i * income;
+        var tax = 0;
+
+        if (incomeLevel <= cutoff) {
+          tax = incomeLevel * baseRate;
+        } else {
+          tax = (cutoff * baseRate) + ((incomeLevel - cutoff) * extRate);
+        }
+
+        taxTable += "incomeLevel " + incomeLevel + " is " + tax + "; ";
+      }
+
+      document.getElementById("result").innerHTML = "Taxes are: " + taxTable;
+    }
+
+</script>
+
+</body>
+</html> 
