@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Travel Planner</title>
+    </head>
+<body>
+
+<h2>Juvaan Sabaroche Travel Planner</h2>
+
+<form>
+    <p>Choose cruise regions:</p>
+
+    <label>
+      <input type="checkbox" id="caribbean" value="True">
+      Caribbean
+    </label>
+
+    <label>
+      <input type="checkbox" id="mediterranean" value="True">
+      Mediterranean
+    </label>
+
+    <label>
+      <input type="checkbox" id="baltic" value="False">
+      Baltic
+    </label>
+
+    <br><br>
+    <input type="button" value="Cruise Choices" onclick="choices()">
+  </form>
+
+
+<p id="travResult">lol</p>
+
+<script> 
+
+    var my_trip = {};
+
+    function choices() {
+        my_trip = {};
+
+        my_trip["cari"] = document.getElementById("caribbean").checked;
+        my_trip["medi"] = document.getElementById("mediterranean").checked;
+        my_trip["balt"] = document.getElementById("baltic").checked;
+
+        document.getElementById("travResult").innerHTML = my_trip;
+    }
+
+    
+</script>
+
+</body>
+</html> 
