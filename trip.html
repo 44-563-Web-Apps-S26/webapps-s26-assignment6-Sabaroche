@@ -30,7 +30,25 @@
   </form>
 
 
-<p id="travResult">lol</p>
+<p id="travResult">Cruise</p>
+
+<form>
+    <p>Enter your travel cities:</p>
+
+    <label>
+        Enter starting city:
+        <input type="text" id="startCity" value="Athens">
+    </label>
+    <br><br>
+    <label>
+        Enter ending city:
+        <input type="text" id="endCity">
+    </label>
+    <br><br>
+    <input type="button" value="Update the trip" onclick="updateTrip()">
+</form>
+
+<p id="utResult">Cruise</p>
 
 <script> 
 
@@ -43,7 +61,14 @@
         my_trip["medi"] = document.getElementById("mediterranean").checked;
         my_trip["balt"] = document.getElementById("baltic").checked;
 
-        document.getElementById("travResult").innerHTML = my_trip;
+        document.getElementById("travResult").innerHTML = JSON.stringify(my_trip);
+    }
+
+    function updateTrip() {
+        my_trip["startCity"] = document.getElementById("startCity").value;
+        my_trip["endCity"] = document.getElementById("endCity").value;
+
+        document.getElementById("utResult").innerHTML = JSON.stringify(my_trip);
     }
 
     
