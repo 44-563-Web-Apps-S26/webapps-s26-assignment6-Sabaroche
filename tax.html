@@ -55,5 +55,50 @@ function doTax (){
 
 </script>
 
+<form>
+  <label>
+    <input type="radio" name="op" id="opExp" value="exponent" onclick="chooseOp()">
+    power
+  </label>
+
+  <label>
+    <input type="radio" name="op" id="opAdd" value="add" onclick="chooseOp()">
+    sum
+  </label>
+
+  <label>
+    <input type="radio" name="op" id="opMod" value="mod" onclick="chooseOp()">
+    mod
+  </label>
+</form>
+
+<p id="opResult"></p>
+
+<script>
+function chooseOp() {
+  var income = Number(document.getElementById("income").value);
+  var baseRate = Number(document.getElementById("baseRate").value);
+
+  var resultText = "";
+
+  if (document.getElementById("opAdd").checked) {
+    var sum = income + baseRate;
+    resultText = income + " + " + baseRate + " is " + sum;
+  } 
+  else if (document.getElementById("opMod").checked) {
+    var mod = income % baseRate;
+    resultText = income + " mod " + baseRate + " is " + mod;
+  } 
+  else if (document.getElementById("opExp").checked) {
+    var power = income ** baseRate; 
+    resultText = income + " to the power of " + baseRate + " is " + power;
+  }
+
+  document.getElementById("opResult").innerHTML = resultText;
+}
+</script>
+
+
+
 </body>
 </html> 
